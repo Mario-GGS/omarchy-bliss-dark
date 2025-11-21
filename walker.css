@@ -41,7 +41,7 @@ child {
 
 child:hover .item-box,
 child:selected .item-box {
-  background: linear-gradient(90deg, rgba(80, 80, 80, 0.75), transparent 100%);
+  background: linear-gradient(90deg, rgba(50, 50, 50, 0.80), transparent 100%);
   border-left: 2px solid alpha(@accent, 1);
   transform: translateX(4px);
   transition:

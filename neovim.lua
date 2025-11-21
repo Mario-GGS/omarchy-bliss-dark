@@ -44,7 +44,7 @@ local M = {
 					cursor_text = "#121212",
 
 					-- Logo / header LazyVim
-					logo = "#F5F5F5",
+					logo = "#FAFAFA",
 				}
 
 				local function set(g, o)
@@ -158,6 +158,14 @@ local M = {
 				set("@namespace", { fg = colors.cyan })
 				set("@text.uri", { fg = colors.green, underline = true })
 				set("@text.todo", { fg = colors.base, bg = colors.yellow, bold = true })
+				-- Lazy.nvim UI (el gestor de plugins que ves abajo con el rayito)
+				pcall(set, "LazyNormal", { fg = colors.fg, bg = colors.panel })
+				pcall(set, "LazyH1", { fg = colors.logo, bg = colors.panel, bold = true })
+				pcall(set, "LazyButton", { fg = colors.bright_cyan, bg = colors.panel })
+				pcall(set, "LazyButtonActive", { fg = colors.base, bg = colors.bright_cyan, bold = true })
+				pcall(set, "LazyComment", { fg = colors.bright_black, bg = colors.panel, italic = true })
+				pcall(set, "LazyProgressDone", { fg = colors.bright_blue, bg = colors.panel })
+				pcall(set, "LazyProgressTodo", { fg = colors.bright_black, bg = colors.panel })
 
 				-- Search
 				set("Search", { fg = colors.base, bg = "#8C8C8C" })
@@ -181,8 +189,11 @@ local M = {
 
 					-- Dashboard / LazyVim
 					set("AlphaNormal", { fg = colors.fg, bg = colors.panel })
-					pcall(set, "AlphaHeader", { fg = colors.logo, bg = colors.panel })
+					pcall(set, "AlphaHeader", { fg = colors.logo, bg = colors.panel, bold = true })
 					pcall(set, "AlphaTitle", { fg = colors.logo, bg = colors.panel, bold = true })
+					pcall(set, "AlphaShortcut", { fg = colors.bright_yellow, bg = colors.panel, bold = true })
+					pcall(set, "AlphaButtons", { fg = colors.bright_cyan, bg = colors.panel })
+					pcall(set, "AlphaFooter", { fg = colors.bright_black, bg = colors.panel })
 				end
 
 				vim.api.nvim_create_autocmd({ "UIEnter", "VimEnter", "ColorScheme" }, {
