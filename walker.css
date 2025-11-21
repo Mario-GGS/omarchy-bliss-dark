@@ -1,13 +1,13 @@
-@define-color text #474747;
-@define-color base #CCCCCC;
-@define-color border #33333344;
-@define-color foreground #474747;
-@define-color background #CCCCCC;
-@define-color hover #D8D8D8;
-@define-color accent #333333;
+@define-color text #E5E5E5;
+@define-color base #121212;
+@define-color border #333333AA;
+@define-color foreground #E5E5E5;
+@define-color background #121212;
+@define-color hover #222222;
+@define-color accent #CCCCCC;
 
 window .box-wrapper {
-  background: rgba(204, 204, 204, 0.55); /* same as Waybar and terminal */
+  background: rgba(24, 24, 24, 0.85); /* same as Waybar and terminal */
   padding: 8px 2px;
   color: @text;
   border: 1px solid @border;
