@@ -1,5 +1,5 @@
 -- Serenity Neovim theme (LazyVim override)
--- Final working version with matching btop-style gray panel
+-- Dark variant by Mario-GGS
 
 local M = {
 	{
@@ -11,11 +11,13 @@ local M = {
 				vim.o.pumblend = 0
 
 				local colors = {
-					base = "#181818", -- antes "#CCCCCC"; base del terminal/fondo
-					panel = "#181818", -- editor panel; en el original es "NONE"
-					fg = "#E5E5E5", -- antes "#474747"
+					-- Base / fondo
+					base = "#121212", -- terminal base
+					panel = "#121212", -- editor panel
+					fg = "#E5E5E5",
 					border = "#333333",
 
+					-- Paleta principal
 					black = "#000000",
 					red = "#C94F4F",
 					green = "#8BC34A",
@@ -34,11 +36,15 @@ local M = {
 					bright_cyan = "#80DEEA",
 					bright_white = "#FFFFFF",
 
+					-- Extras
 					subtle = "#252525",
-					selection_bg = "#333333",
+					selection_bg = "#252525",
 					selection_fg = "#F0F0F0",
 					cursor = "#F0F0F0",
-					cursor_text = "#181818",
+					cursor_text = "#121212",
+
+					-- Logo / header LazyVim
+					logo = "#F5F5F5",
 				}
 
 				local function set(g, o)
@@ -90,14 +96,16 @@ local M = {
 				set("Boolean", { fg = colors.red, bold = true })
 				set("Float", { fg = colors.yellow })
 				set("Identifier", { fg = colors.fg })
-				set("Function", { fg = colors.blue, bold = true })
+
+				-- un poco más de punch para funciones y palabras clave
+				set("Function", { fg = colors.bright_blue, bold = true })
 				set("Function.builtin", { fg = colors.cyan, bold = true })
 				set("Statement", { fg = colors.magenta, bold = true })
 				set("Conditional", { fg = colors.magenta })
 				set("Repeat", { fg = colors.yellow })
 				set("Label", { fg = colors.cyan })
 				set("Operator", { fg = colors.cyan })
-				set("Keyword", { fg = colors.blue, bold = true })
+				set("Keyword", { fg = colors.bright_blue, bold = true })
 				set("Exception", { fg = colors.red })
 				set("PreProc", { fg = colors.yellow })
 				set("Include", { fg = colors.yellow })
@@ -119,6 +127,7 @@ local M = {
 				set("DiagnosticWarn", { fg = colors.yellow, bg = colors.panel })
 				set("DiagnosticInfo", { fg = colors.cyan, bg = colors.panel })
 				set("DiagnosticHint", { fg = colors.green, bg = colors.panel })
+
 				set("DiagnosticUnderlineError", { undercurl = true, sp = colors.red })
 				set("DiagnosticUnderlineWarn", { undercurl = true, sp = colors.yellow })
 				set("DiagnosticUnderlineInfo", { undercurl = true, sp = colors.cyan })
@@ -150,24 +159,30 @@ local M = {
 				set("@text.uri", { fg = colors.green, underline = true })
 				set("@text.todo", { fg = colors.base, bg = colors.yellow, bold = true })
 
-				-- Search (Serenity default)
+				-- Search
 				set("Search", { fg = colors.base, bg = "#8C8C8C" })
 				set("IncSearch", { fg = colors.base, bg = colors.black, bold = true })
 				pcall(set, "CurSearch", { fg = colors.base, bg = colors.black, bold = true })
 				set("Substitute", { fg = colors.base, bg = "#595959", bold = true })
-				set("MatchParen", { fg = colors.black, bg = "#B6B6B6", bold = true })
-				pcall(set, "HlSearchNear", { fg = colors.base, bg = "#7A7A7A" })
-				pcall(set, "HlSearchLens", { fg = colors.base, bg = "#A6A6A6" })
-				pcall(set, "HlSearchLensNear", { fg = colors.base, bg = "#8C8C8C" })
 
-				-- Enforce background consistency
+				-- MatchParen y lens algo más discretos en dark
+				set("MatchParen", { fg = colors.black, bg = "#4A4A4A", bold = true })
+				pcall(set, "HlSearchNear", { fg = colors.base, bg = "#5E5E5E" })
+				pcall(set, "HlSearchLens", { fg = colors.base, bg = "#707070" })
+				pcall(set, "HlSearchLensNear", { fg = colors.base, bg = "#666666" })
+
+				-- Enforce background consistency + Alpha/LazyVim tweaks
 				local function enforce_panel()
 					set("Normal", { fg = colors.fg, bg = colors.panel })
 					set("NormalNC", { fg = colors.fg, bg = colors.panel })
 					set("NormalFloat", { fg = colors.fg, bg = colors.panel })
 					set("StatusLine", { fg = colors.fg, bg = colors.panel })
 					set("TabLine", { fg = colors.bright_black, bg = colors.panel })
+
+					-- Dashboard / LazyVim
 					set("AlphaNormal", { fg = colors.fg, bg = colors.panel })
+					pcall(set, "AlphaHeader", { fg = colors.logo, bg = colors.panel })
+					pcall(set, "AlphaTitle", { fg = colors.logo, bg = colors.panel, bold = true })
 				end
 
 				vim.api.nvim_create_autocmd({ "UIEnter", "VimEnter", "ColorScheme" }, {
