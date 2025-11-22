@@ -1,5 +1,5 @@
 -- Dark Inverted Neovim theme (LazyVim override)
--- Mantiene UI monocromática, solo colorea el código
+-- Inspired by Tokyo Night - Mantiene UI monocromática, solo colorea el código
 
 local M = {
 	{
@@ -22,16 +22,20 @@ local M = {
 					cursor = "#E5E5E5",
 					cursor_text = "#121212",
 
-					-- Syntax colors (inspirado en Catppuccin)
-					-- Usamos una paleta reducida pero efectiva
-					red = "#F38BA8", -- keywords importantes, errores
-					peach = "#FAB387", -- números, constantes
-					yellow = "#F9E2AF", -- strings
-					green = "#A6E3A1", -- funciones
-					teal = "#94E2D5", -- types
-					blue = "#89B4FA", -- variables especiales
-					mauve = "#CBA6F7", -- keywords de control
-					pink = "#F5C2E7", -- operators
+					-- Syntax colors (inspirado en Tokyo Night)
+					-- Paleta mejorada y más vibrante
+					red = "#F7768E", -- keywords importantes, errores (Tokyo Night red)
+					orange = "#FF9E64", -- números, constantes (Tokyo Night orange)
+					yellow = "#E0AF68", -- strings (Tokyo Night yellow)
+					green = "#9ECE6A", -- funciones, strings especiales (Tokyo Night green)
+					teal = "#73DACA", -- types, clases (Tokyo Night teal)
+					cyan = "#7DCFFF", -- variables especiales, imports (Tokyo Night cyan)
+					blue = "#7AA2F7", -- keywords de control (Tokyo Night blue)
+					purple = "#BB9AF7", -- operators, special (Tokyo Night purple)
+					magenta = "#C678DD", -- decoradores, annotations
+
+					-- Comentarios más visibles (Tokyo Night comment)
+					comment = "#565F89", -- Mucho más visible que #404040
 				}
 
 				local function set(g, o)
@@ -73,60 +77,60 @@ local M = {
 				-- Selections / folds (mantener monocromático)
 				set("Visual", { bg = colors.selection_bg, fg = colors.selection_fg })
 				set("VisualNOS", { bg = colors.subtle })
-				set("Folded", vim.tbl_extend("force", { fg = colors.subtle, italic = true }, P))
+				set("Folded", vim.tbl_extend("force", { fg = colors.comment, italic = true }, P))
 
 				-- ═══════════════════════════════════════════════════════════
 				-- AQUÍ EMPIEZA EL COLOR - Solo para el código
 				-- ═══════════════════════════════════════════════════════════
 
-				-- Comentarios (sutiles)
-				set("Comment", { fg = colors.subtle, italic = true })
+				-- Comentarios (MÁS VISIBLES - color gris medio como Tokyo Night)
+				set("Comment", { fg = colors.comment, italic = true })
 
-				-- Strings y caracteres (amarillo)
+				-- Strings y caracteres (amarillo Tokyo Night)
 				set("String", { fg = colors.yellow })
 				set("Character", { fg = colors.yellow })
 
-				-- Números y constantes (peach/naranja)
-				set("Number", { fg = colors.peach })
-				set("Float", { fg = colors.peach })
-				set("Boolean", { fg = colors.peach })
-				set("Constant", { fg = colors.peach })
+				-- Números y constantes (naranja)
+				set("Number", { fg = colors.orange })
+				set("Float", { fg = colors.orange })
+				set("Boolean", { fg = colors.orange })
+				set("Constant", { fg = colors.orange })
 
 				-- Funciones (verde)
-				set("Function", { fg = colors.green })
+				set("Function", { fg = colors.green, bold = true })
 				set("Function.builtin", { fg = colors.green })
 
-				-- Keywords y control flow (mauve/morado)
-				set("Keyword", { fg = colors.mauve })
-				set("Statement", { fg = colors.mauve })
-				set("Conditional", { fg = colors.mauve })
-				set("Repeat", { fg = colors.mauve })
-				set("Label", { fg = colors.mauve })
-				set("Exception", { fg = colors.red })
+				-- Keywords y control flow (azul Tokyo Night)
+				set("Keyword", { fg = colors.blue, italic = true })
+				set("Statement", { fg = colors.blue })
+				set("Conditional", { fg = colors.purple, italic = true })
+				set("Repeat", { fg = colors.purple, italic = true })
+				set("Label", { fg = colors.purple })
+				set("Exception", { fg = colors.red, italic = true })
 
-				-- Operators (pink)
-				set("Operator", { fg = colors.pink })
+				-- Operators (púrpura)
+				set("Operator", { fg = colors.purple })
 				set("Delimiter", { fg = colors.fg })
 
 				-- Types (teal/cyan)
 				set("Type", { fg = colors.teal })
-				set("StorageClass", { fg = colors.teal })
+				set("StorageClass", { fg = colors.blue, italic = true })
 				set("Structure", { fg = colors.teal })
 				set("Typedef", { fg = colors.teal })
 
 				-- Variables e identificadores (fg normal)
 				set("Identifier", { fg = colors.fg })
 
-				-- Preprocessor (blue)
-				set("PreProc", { fg = colors.blue })
-				set("Include", { fg = colors.blue })
-				set("Define", { fg = colors.blue })
-				set("Macro", { fg = colors.blue })
+				-- Preprocessor (cyan)
+				set("PreProc", { fg = colors.cyan })
+				set("Include", { fg = colors.purple, italic = true })
+				set("Define", { fg = colors.purple })
+				set("Macro", { fg = colors.purple })
 
-				-- Special (pink)
-				set("Special", { fg = colors.pink })
-				set("SpecialChar", { fg = colors.pink })
-				set("Tag", { fg = colors.pink })
+				-- Special (púrpura)
+				set("Special", { fg = colors.purple })
+				set("SpecialChar", { fg = colors.purple })
+				set("Tag", { fg = colors.cyan })
 				set("Debug", { fg = colors.red })
 
 				-- Titles y directorios (mantener monocromático para file explorer)
@@ -135,46 +139,117 @@ local M = {
 
 				-- Diagnostics (colores solo para errores/warnings)
 				set("DiagnosticError", { fg = colors.red, bg = colors.panel })
-				set("DiagnosticWarn", { fg = colors.peach, bg = colors.panel })
-				set("DiagnosticInfo", { fg = colors.blue, bg = colors.panel })
+				set("DiagnosticWarn", { fg = colors.orange, bg = colors.panel })
+				set("DiagnosticInfo", { fg = colors.cyan, bg = colors.panel })
 				set("DiagnosticHint", { fg = colors.teal, bg = colors.panel })
 				set("DiagnosticUnderlineError", { undercurl = true, sp = colors.red })
-				set("DiagnosticUnderlineWarn", { undercurl = true, sp = colors.peach })
-				set("DiagnosticUnderlineInfo", { undercurl = true, sp = colors.blue })
+				set("DiagnosticUnderlineWarn", { undercurl = true, sp = colors.orange })
+				set("DiagnosticUnderlineInfo", { undercurl = true, sp = colors.cyan })
 				set("DiagnosticUnderlineHint", { undercurl = true, sp = colors.teal })
 
-				-- Treesitter (mapeo coherente)
+				-- ═══════════════════════════════════════════════════════════
+				-- Treesitter - Soporte mejorado para múltiples lenguajes
+				-- ═══════════════════════════════════════════════════════════
+
+				-- Básicos
 				set("@text", { link = "Normal" })
-				set("@comment", { link = "Comment" })
+				set("@comment", { fg = colors.comment, italic = true })
 				set("@constant", { link = "Constant" })
-				set("@constant.builtin", { fg = colors.peach })
-				set("@string", { link = "String" })
+				set("@constant.builtin", { fg = colors.orange })
+				set("@string", { fg = colors.yellow })
+				set("@string.escape", { fg = colors.purple })
+				set("@string.special", { fg = colors.green })
 				set("@character", { link = "Character" })
 				set("@number", { link = "Number" })
 				set("@boolean", { link = "Boolean" })
 				set("@float", { link = "Float" })
-				set("@function", { link = "Function" })
-				set("@function.builtin", { link = "Function.builtin" })
+
+				-- Funciones y métodos
+				set("@function", { fg = colors.green, bold = true })
+				set("@function.builtin", { fg = colors.green })
 				set("@function.call", { fg = colors.green })
-				set("@method", { link = "Function" })
+				set("@method", { fg = colors.green })
 				set("@method.call", { fg = colors.green })
-				set("@keyword", { link = "Keyword" })
-				set("@keyword.function", { fg = colors.mauve })
-				set("@keyword.operator", { link = "Operator" })
-				set("@keyword.return", { fg = colors.red })
-				set("@type", { link = "Type" })
-				set("@type.builtin", { fg = colors.teal })
-				set("@variable", { fg = colors.fg })
-				set("@variable.builtin", { fg = colors.blue })
-				set("@parameter", { fg = colors.fg, italic = true })
-				set("@property", { fg = colors.fg })
-				set("@tag", { fg = colors.mauve })
-				set("@tag.attribute", { fg = colors.teal })
-				set("@tag.delimiter", { fg = colors.pink })
 				set("@constructor", { fg = colors.teal })
+
+				-- Keywords
+				set("@keyword", { fg = colors.blue, italic = true })
+				set("@keyword.function", { fg = colors.purple, italic = true })
+				set("@keyword.operator", { fg = colors.purple })
+				set("@keyword.return", { fg = colors.red, italic = true })
+				set("@keyword.import", { fg = colors.purple, italic = true })
+
+				-- Types
+				set("@type", { fg = colors.teal })
+				set("@type.builtin", { fg = colors.cyan })
+				set("@type.definition", { fg = colors.teal })
+				set("@type.qualifier", { fg = colors.blue, italic = true })
+
+				-- Variables
+				set("@variable", { fg = colors.fg })
+				set("@variable.builtin", { fg = colors.red, italic = true })
+				set("@variable.parameter", { fg = colors.orange, italic = true })
+				set("@variable.member", { fg = colors.fg })
+				set("@parameter", { fg = colors.orange, italic = true })
+				set("@property", { fg = colors.fg })
+				set("@field", { fg = colors.fg })
+
+				-- ═══════════════════════════════════════════════════════════
+				-- PYTHON - Soporte específico mejorado
+				-- ═══════════════════════════════════════════════════════════
+				set("@decorator.python", { fg = colors.magenta, italic = true })
+				set("@function.decorator.python", { fg = colors.magenta, italic = true })
+				set("@variable.builtin.python", { fg = colors.red, italic = true }) -- self, cls
+				set("@type.builtin.python", { fg = colors.cyan }) -- int, str, etc
+				set("@keyword.import.python", { fg = colors.purple, italic = true })
+				set("@keyword.exception.python", { fg = colors.red, italic = true })
+				set("@string.documentation.python", { fg = colors.comment, italic = true })
+
+				-- JavaScript/TypeScript
+				set("@constructor.javascript", { fg = colors.teal })
+				set("@constructor.typescript", { fg = colors.teal })
+				set("@tag.javascript", { fg = colors.red })
+				set("@tag.typescript", { fg = colors.red })
+				set("@tag.tsx", { fg = colors.red })
+				set("@tag.attribute.tsx", { fg = colors.orange })
+				set("@tag.delimiter.tsx", { fg = colors.fg })
+
+				-- Go
+				set("@namespace.go", { fg = colors.teal })
+				set("@type.go", { fg = colors.teal })
+				set("@function.call.go", { fg = colors.green })
+
+				-- Rust
+				set("@namespace.rust", { fg = colors.teal })
+				set("@type.rust", { fg = colors.teal })
+				set("@attribute.rust", { fg = colors.magenta })
+
+				-- HTML/XML
+				set("@tag", { fg = colors.red })
+				set("@tag.attribute", { fg = colors.orange })
+				set("@tag.delimiter", { fg = colors.fg })
+
+				-- CSS
+				set("@property.css", { fg = colors.cyan })
+				set("@type.css", { fg = colors.orange })
+
+				-- Markdown
+				set("@text.title.markdown", { fg = colors.red, bold = true })
+				set("@text.literal.markdown", { fg = colors.green })
+				set("@text.uri", { fg = colors.cyan, underline = true })
+				set("@text.emphasis", { italic = true })
+				set("@text.strong", { bold = true })
+
+				-- Otros
 				set("@namespace", { fg = colors.teal })
-				set("@text.uri", { fg = colors.blue, underline = true })
+				set("@label", { fg = colors.purple })
+				set("@operator", { fg = colors.purple })
+				set("@punctuation.delimiter", { fg = colors.fg })
+				set("@punctuation.bracket", { fg = colors.fg })
+				set("@punctuation.special", { fg = colors.purple })
 				set("@text.todo", { fg = colors.base, bg = colors.yellow, bold = true })
+				set("@text.warning", { fg = colors.base, bg = colors.orange, bold = true })
+				set("@text.danger", { fg = colors.base, bg = colors.red, bold = true })
 
 				-- Search (mantener monocromático pero visible)
 				set("Search", { fg = colors.base, bg = colors.fg })
