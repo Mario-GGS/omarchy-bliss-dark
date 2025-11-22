@@ -1,11 +1,11 @@
-/* ── Cyberpunk Edgerunners OSD */
+/* ── Dark Inverted OSD */
 
 @define-color bg        #121212;
 @define-color fg        #E5E5E5;
-@define-color border    #00BFD4;
-@define-color track     rgba(94,27,107,0.3);
-@define-color progress1 #00BFD4;
-@define-color progress2 #3FCC1A;
+@define-color border    rgba(229,229,229,0.55);
+@define-color track     rgba(229,229,229,0.15);
+@define-color progress1 rgba(229,229,229,0.90);
+@define-color progress2 rgba(229,229,229,0.90);
 
 window {
   background-color: transparent;
@@ -15,20 +15,21 @@ window {
   box-shadow: none;
 }
 
+/* Frosted panel with subtle border; keep it squarish like the rest */
 .osd,
 #osd,
 osd {
   background-color: alpha(@bg, 0.45);
-  border: 2px solid @border;
+  border: 1px solid @border;
   border-radius: 12px;
-  box-shadow: 0 0 10px alpha(@border, 0.3);
+  box-shadow: none;
 }
 
 image {
-  color: @border;
+  color: @fg;
   -gtk-icon-size: 48px;
   margin: 0 16px 0 0;
-  filter: drop-shadow(0 0 3px alpha(@border, 0.5));
+  filter: none;
 }
 
 label {
@@ -36,7 +37,7 @@ label {
   font-size: 14px;
   font-weight: 500;
   margin: 0;
-  text-shadow: 0 0 2px alpha(@border, 0.3);
+  text-shadow: none;
 }
 
 /* Progress bar */
@@ -52,7 +53,7 @@ progressbar > trough,
 progressbar trough {
   background: @track;
   border-radius: 12px;
-  border: 1px solid alpha(@border, 0.4);
+  border: 1px solid rgba(229,229,229,0.25);
   min-height: 16px;
 }
 
@@ -62,5 +63,5 @@ progressbar progress {
   border-radius: 12px;
   border: none;
   min-height: 16px;
-  box-shadow: 0 0 8px alpha(@progress1, 0.5);
+  box-shadow: none;
 }

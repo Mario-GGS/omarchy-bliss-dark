@@ -1,12 +1,10 @@
 @define-color text #E5E5E5;
 @define-color base #121212;
-@define-color border #00BFD4;
+@define-color border #E5E5E544;
 @define-color foreground #E5E5E5;
 @define-color background #121212;
-@define-color hover #5E1B6B;
-@define-color accent #00BFD4;
-@define-color accent2 #C49AD9;
-@define-color highlight #3FCC1A;
+@define-color hover #272727;
+@define-color accent #E5E5E5;
 
 window .box-wrapper {
   background: rgba(18, 18, 18, 0.55);
@@ -20,7 +18,7 @@ window .search-container,
 window .search {
   background: transparent;
   color: @foreground;
-  border: 1px solid alpha(@accent, 0.6);
+  border: 1px solid alpha(@border, 0.5);
   padding: 8px 12px;
   margin: 4px 5px;
   font-size: 14px;
@@ -43,8 +41,8 @@ child {
 
 child:hover .item-box,
 child:selected .item-box {
-  background: linear-gradient(90deg, alpha(@hover, 0.4), transparent 100%);
-  border-left: 2px solid @accent;
+  background: linear-gradient(90deg, alpha(@accent, 0.15), transparent 100%);
+  border-left: 2px solid alpha(@accent, 1);
   transform: translateX(4px);
   transition:
     background 150ms cubic-bezier(0.25, 0.8, 0.25, 1),
@@ -54,8 +52,7 @@ child:selected .item-box {
 
 child:hover .item-text,
 child:selected .item-text {
-  color: @accent;
-  text-shadow: 0 0 2px alpha(@accent, 0.3);
+  text-shadow: 0 0 1px alpha(@accent, 0.1);
 }
 
 child,
