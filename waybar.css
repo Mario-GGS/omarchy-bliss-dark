@@ -1,8 +1,194 @@
 /* ────────────────────────────────────────────────────────────
- * Custom Dark Theme for Waybar
+ * Custom Dark Theme for Waybar - Compact Version
  * Made with Omarchist - Dark Inverted
  * ────────────────────────────────────────────────────────────
  */
 
 @define-color background #121212;
 @define-color foreground #E5E5E5;
+@define-color accent rgba(229, 229, 229, 0.15);
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    min-height: 0;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+/* ════════════════════════════════════════════════════════════
+   MÓDULOS IZQUIERDA (Logo + Workspaces)
+   ════════════════════════════════════════════════════════════ */
+
+#custom-omarchy {
+    background-color: alpha(@background, 0.55);
+    color: @foreground;
+    padding: 0 12px;
+    margin: 5px 0 5px 10px;
+}
+
+#workspaces {
+    background-color: alpha(@background, 0.55);
+    color: @foreground;
+    padding: 0 8px;
+    margin: 5px 5px 5px 0;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    color: @foreground;
+    background-color: transparent;
+    min-width: 24px;
+}
+
+#workspaces button.active {
+    color: @background;
+    background-color: @foreground;
+}
+
+#workspaces button:hover {
+    background-color: @accent;
+}
+
+/* ════════════════════════════════════════════════════════════
+   MÓDULOS CENTRO (Reloj + Indicadores)
+   ════════════════════════════════════════════════════════════ */
+
+#clock {
+    background-color: alpha(@background, 0.55);
+    color: @foreground;
+    padding: 0 15px;
+    margin: 5px 5px;
+}
+
+#custom-update {
+    background-color: alpha(@background, 0.55);
+    color: @foreground;
+    padding: 0 8px;
+    margin: 5px 0 5px 5px;
+}
+
+#custom-screenrecording-indicator {
+    background-color: alpha(@background, 0.55);
+    color: #F38BA8;
+    padding: 0 8px;
+    margin: 5px 5px 5px 0;
+}
+
+/* ════════════════════════════════════════════════════════════
+   MÓDULOS DERECHA (Iconos del sistema)
+   ════════════════════════════════════════════════════════════ */
+
+#tray {
+    background-color: alpha(@background, 0.55);
+    padding: 0 8px;
+    margin: 5px 0 5px 5px;
+}
+
+.tray-group-item {
+    padding: 0 4px;
+}
+
+#custom-expand-icon {
+    background-color: alpha(@background, 0.55);
+    color: @foreground;
+    padding: 0 8px;
+    margin: 5px 0 5px 5px;
+}
+
+#bluetooth {
+    background-color: alpha(@background, 0.55);
+    color: @foreground;
+    padding: 0 8px;
+    margin: 5px 0;
+}
+
+#network {
+    background-color: alpha(@background, 0.55);
+    color: @foreground;
+    padding: 0 8px;
+    margin: 5px 0;
+}
+
+#pulseaudio {
+    background-color: alpha(@background, 0.55);
+    color: @foreground;
+    padding: 0 8px;
+    margin: 5px 0;
+}
+
+#cpu {
+    background-color: alpha(@background, 0.55);
+    color: @foreground;
+    padding: 0 8px;
+    margin: 5px 0;
+}
+
+#battery {
+    background-color: alpha(@background, 0.55);
+    color: @foreground;
+    padding: 0 10px;
+    margin: 5px 0;
+}
+
+#battery.warning {
+    color: #F9E2AF;
+}
+
+#battery.critical {
+    color: #F38BA8;
+}
+
+/* ════════════════════════════════════════════════════════════
+   POWER MENU (Grupo expandible)
+   ════════════════════════════════════════════════════════════ */
+
+#custom-power-icon {
+    background-color: alpha(@background, 0.55);
+    color: @foreground;
+    padding: 0 10px;
+    margin: 5px 10px 5px 5px;
+}
+
+.power_item {
+    background-color: alpha(@background, 0.55);
+    color: @foreground;
+    padding: 0 8px;
+    margin: 5px 0;
+}
+
+#custom-poweroff {
+    color: #F38BA8;
+}
+
+#custom-reboot {
+    color: #F9E2AF;
+}
+
+#custom-suspend {
+    color: #89B4FA;
+}
+
+#custom-logout {
+    color: #CBA6F7;
+}
+
+/* ════════════════════════════════════════════════════════════
+   TOOLTIPS
+   ════════════════════════════════════════════════════════════ */
+
+tooltip {
+    background-color: alpha(@background, 0.95);
+    color: @foreground;
+    border: 1px solid alpha(@foreground, 0.2);
+    border-radius: 0;
+    padding: 8px 12px;
+}
+
+tooltip label {
+    color: @foreground;
+}
