@@ -1,5 +1,4 @@
-# ── Dark Inverted (Monochrome Neutral) ──
-# Matches your Hyprland and Alacritty greyscale setup.
+# ── Cyberpunk Edgerunners Dark Theme ──
 
 # Main background, leave empty for transparency
 theme[main_bg]=""
@@ -8,67 +7,71 @@ theme[main_bg]=""
 theme[main_fg]="#E5E5E5"
 
 # Title color for boxes
-theme[title]="#E5E5E5"
+theme[title]="#00BFD4"
 
 # Highlight color for keyboard shortcuts
-theme[hi_fg]="#E5E5E5"
+theme[hi_fg]="#3FCC1A"
 
 # Background color of selected item in processes box
-theme[selected_bg]="#E5E5E5"
+theme[selected_bg]="#5E1B6B"
 
 # Foreground color of selected item in processes box
-theme[selected_fg]="#121212"
+theme[selected_fg]="#E5E5E5"
 
 # Color of inactive/disabled text
-theme[inactive_fg]="#B5B5B5"
+theme[inactive_fg]="#5E1B6B"
 
 # Misc colors for processes box including mini cpu graphs, details memory graph and details status text
-theme[proc_misc]="#E5E5E5"
+theme[proc_misc]="#C49AD9"
 
 # Box outline and divider line color
-theme[cpu_box]="#E5E5E5"
-theme[mem_box]="#E5E5E5"
-theme[net_box]="#E5E5E5"
-theme[proc_box]="#E5E5E5"
-theme[div_line]="#B5B5B5"
+theme[cpu_box]="#5DADE2"
+theme[mem_box]="#C49AD9"
+theme[net_box]="#00BFD4"
+theme[proc_box]="#D4B000"
+theme[div_line]="#5E1B6B"
 
-# Gradients for all meters and graphs
-theme[temp_start]="#898989"
-theme[temp_mid]="#AEAEAE"
-theme[temp_end]="#E5E5E5"
+# Gradients for CPU meter and graph
+theme[cpu_start]="#5DADE2"
+theme[cpu_mid]="#00BFD4"
+theme[cpu_end]="#3FCC1A"
 
-theme[cpu_start]="#898989"
-theme[cpu_mid]="#AEAEAE"
-theme[cpu_end]="#E5E5E5"
+# Gradients for Memory meter and graph
+theme[mem_start]="#C49AD9"
+theme[mem_mid]="#FF8C42"
+theme[mem_end]="#FF6B6B"
 
-theme[mem_start]="#636363"
-theme[mem_mid]="#E5E5E5"
-theme[mem_end]="#E5E5E5"
+# Gradients for Network meter and graph
+theme[net_start]="#00BFD4"
+theme[net_mid]="#5DADE2"
+theme[net_end]="#3FCC1A"
 
-theme[net_start]="#898989"
-theme[net_mid]="#636363"
-theme[net_end]="#E5E5E5"
+# Gradients for Temperature
+theme[temp_start]="#3FCC1A"
+theme[temp_mid]="#D4B000"
+theme[temp_end]="#FF6B6B"
 
-theme[proc_start]="#767676"
-theme[proc_mid]="#ABABAB"
+# Gradients for Processes
+theme[proc_start]="#5DADE2"
+theme[proc_mid]="#C49AD9"
 theme[proc_end]="#E5E5E5"
 
 # Bottom bar
 theme[btm_bg]=""
 theme[btm_fg]="#E5E5E5"
 
-# ── Explicit overrides (fixes blue "W" and MHz/GHz numbers) ──
-theme[power]       = "#E5E5E5"
-theme[cpu_power]   = "#E5E5E5"
-theme[watts]       = "#E5E5E5"
-theme[freq]        = "#E5E5E5"
-theme[cpu_freq]    = "#E5E5E5"
-theme[ghz]         = "#E5E5E5"
-theme[temp]        = "#E5E5E5"
-theme[temp_crit]   = "#E5E5E5"
-theme[gpu_power]   = "#E5E5E5"
-theme[gpu_freq]    = "#E5E5E5"
-theme[gpu_temp]    = "#E5E5E5"
+# Color overrides
+theme[power]       = "#D4B000"
+theme[cpu_power]   = "#D4B000"
+theme[watts]       = "#FF8C42"
+theme[freq]        = "#00BFD4"
+theme[cpu_freq]    = "#00BFD4"
+theme[ghz]         = "#5DADE2"
+theme[temp]        = "#3FCC1A"
+theme[temp_crit]   = "#FF6B6B"
+theme[gpu_power]   = "#D4B000"
+theme[gpu_freq]    = "#00BFD4"
+theme[gpu_temp]    = "#3FCC1A"
 theme[cpu_text]    = "#E5E5E5"
 
-# ── End Dark Inverted Theme ──
+# ── End Cyberpunk Edgerunners Theme ──

@@ -14,32 +14,32 @@ foreground = "#E5E5E5"
 
 [colors.cursor]
 text = "#121212"
-cursor = "#E5E5E5"
+cursor = "#00BFD4"
 
 [colors.normal]
 black   = "#121212"
-red     = "#2a2a2a"
-green   = "#3d3d3d"
-yellow  = "#505050"
-blue    = "#636363"
-magenta = "#767676"
-cyan    = "#898989"
+red     = "#FF6B6B"
+green   = "#3FCC1A"
+yellow  = "#D4B000"
+blue    = "#5DADE2"
+magenta = "#C49AD9"
+cyan    = "#00BFD4"
 white   = "#E5E5E5"
 
 [colors.bright]
-black   = "#1e1e1e"
-red     = "#3a3a3a"
-green   = "#4d4d4d"
-yellow  = "#606060"
-blue    = "#737373"
-magenta = "#868686"
-cyan    = "#999999"
+black   = "#2A2A2A"
+red     = "#FF8585"
+green   = "#5FE038"
+yellow  = "#F8E602"
+blue    = "#7EC8F0"
+magenta = "#E0B8ED"
+cyan    = "#00D4EA"
 white   = "#ffffff"
 
 [colors.selection]
-text = "#121212"
-background = "#E5E5E5"
+text = "#E5E5E5"
+background = "#5E1B6B"
 
 [colors.vi_mode_cursor]
 text   = "#121212"
-cursor = "#E5E5E5"
+cursor = "#00BFD4"

@@ -1,5 +1,5 @@
 -- Dark Inverted Neovim theme (LazyVim override)
--- Based on Serenity with inverted colors
+-- Cyberpunk Edgerunners inspired colors
 
 local M = {
 	{
@@ -11,34 +11,36 @@ local M = {
 				vim.o.pumblend = 0
 
 				local colors = {
-					base = "#121212", -- terminal base (invertido de #CCCCCC)
+					base = "#121212", -- terminal base
 					panel = "NONE", -- editor panel
-					fg = "#E5E5E5", -- foreground principal (invertido de #474747)
-					border = "#E5E5E5", -- bordes (invertido de #333333)
+					fg = "#E5E5E5", -- foreground principal
+					border = "#5DADE2", -- azul para bordes
 
-					black = "#121212", -- invertido de #CCCCCC
-					red = "#2A2A2A", -- invertido de #3D3D3D
-					green = "#3D3D3D", -- invertido de #474747
-					yellow = "#505050", -- invertido de #515151
-					blue = "#636363", -- invertido de #5B5B5B
-					magenta = "#767676", -- invertido de #656565
-					cyan = "#898989", -- invertido de #6F6F6F
-					white = "#E5E5E5", -- invertido de #333333
+					-- Cyberpunk Edgerunners palette (darkened)
+					black = "#121212",
+					red = "#FF6B6B", -- rojo cálido para errores
+					green = "#3FCC1A", -- verde edgerunners
+					yellow = "#D4B000", -- amarillo edgerunners
+					blue = "#5DADE2", -- azul frío
+					magenta = "#C49AD9", -- rosa/magenta edgerunners
+					cyan = "#00BFD4", -- cyan edgerunners
+					white = "#E5E5E5",
+					orange = "#FF8C42", -- naranja acento
 
-					bright_black = "#1E1E1E", -- invertido de #4A4A4A
-					bright_red = "#3A3A3A", -- invertido de #545454
-					bright_green = "#4D4D4D", -- invertido de #5E5E5E
-					bright_yellow = "#606060", -- invertido de #686868
-					bright_blue = "#737373", -- invertido de #727272
-					bright_magenta = "#868686", -- invertido de #7C7C7C
-					bright_cyan = "#999999", -- invertido de #868686
+					bright_black = "#2A2A2A",
+					bright_red = "#FF8585",
+					bright_green = "#5FE038",
+					bright_yellow = "#F8E602",
+					bright_blue = "#7EC8F0",
+					bright_magenta = "#E0B8ED",
+					bright_cyan = "#00D4EA",
 					bright_white = "#FFFFFF",
 
-					subtle = "#404040", -- invertido de #BFBFBF
-					selection_bg = "#E5E5E5", -- invertido de #333333
-					selection_fg = "#121212", -- invertido de #CCCCCC
-					cursor = "#E5E5E5", -- invertido de #333333
-					cursor_text = "#121212", -- invertido de #CCCCCC
+					subtle = "#5E1B6B", -- violeta oscuro
+					selection_bg = "#5E1B6B",
+					selection_fg = "#E5E5E5",
+					cursor = "#00BFD4",
+					cursor_text = "#121212",
 				}
 
 				local function set(g, o)
@@ -51,9 +53,10 @@ local M = {
 				-- Core/editor
 				set("Normal", vim.tbl_extend("force", { fg = colors.fg }, P))
 				set("NormalNC", vim.tbl_extend("force", { fg = colors.fg }, P))
-				set("SignColumn", vim.tbl_extend("force", { fg = colors.bright_white }, P))
-				set("FoldColumn", vim.tbl_extend("force", { fg = colors.bright_white }, P))
-				set("LineNr", vim.tbl_extend("force", { fg = colors.bright_white }, P))
+				set("SignColumn", vim.tbl_extend("force", { fg = colors.cyan }, P))
+				set("FoldColumn", vim.tbl_extend("force", { fg = colors.magenta }, P))
+				set("LineNr", vim.tbl_extend("force", { fg = colors.subtle }, P))
+				set("CursorLineNr", vim.tbl_extend("force", { fg = colors.cyan, bold = true }, P))
 				set("CursorLine", P)
 				set("CursorColumn", P)
 
@@ -61,16 +64,16 @@ local M = {
 				set("NormalFloat", vim.tbl_extend("force", { fg = colors.fg }, P))
 				set("FloatBorder", vim.tbl_extend("force", { fg = colors.border }, P))
 				set("Pmenu", vim.tbl_extend("force", { fg = colors.fg }, P))
-				set("PmenuSel", { fg = colors.base, bg = colors.blue, bold = true })
+				set("PmenuSel", { fg = colors.base, bg = colors.cyan, bold = true })
 				set("PmenuSbar", { bg = colors.subtle })
 				set("PmenuThumb", { bg = colors.green })
 
 				-- Statusline / tabs
-				set("StatusLine", vim.tbl_extend("force", { fg = colors.fg }, P))
-				set("StatusLineNC", vim.tbl_extend("force", { fg = colors.bright_white }, P))
-				set("TabLine", vim.tbl_extend("force", { fg = colors.bright_white }, P))
+				set("StatusLine", vim.tbl_extend("force", { fg = colors.cyan }, P))
+				set("StatusLineNC", vim.tbl_extend("force", { fg = colors.subtle }, P))
+				set("TabLine", vim.tbl_extend("force", { fg = colors.magenta }, P))
 				set("TabLineFill", P)
-				set("TabLineSel", { fg = colors.base, bg = colors.blue, bold = true })
+				set("TabLineSel", { fg = colors.base, bg = colors.cyan, bold = true })
 
 				-- Window separators
 				set("WinSeparator", vim.tbl_extend("force", { fg = colors.border }, P))
@@ -79,31 +82,31 @@ local M = {
 				-- Selections / folds
 				set("Visual", { bg = colors.selection_bg, fg = colors.selection_fg })
 				set("VisualNOS", { bg = colors.subtle })
-				set("Folded", vim.tbl_extend("force", { fg = colors.bright_white, italic = true }, P))
+				set("Folded", vim.tbl_extend("force", { fg = colors.magenta, italic = true }, P))
 
-				-- Syntax
-				set("Comment", { fg = colors.bright_white, italic = true })
+				-- Syntax highlighting (colorful!)
+				set("Comment", { fg = colors.subtle, italic = true })
 				set("Constant", { fg = colors.magenta })
 				set("String", { fg = colors.green })
 				set("Character", { fg = colors.cyan })
 				set("Number", { fg = colors.yellow })
-				set("Boolean", { fg = colors.red, bold = true })
+				set("Boolean", { fg = colors.orange, bold = true })
 				set("Float", { fg = colors.yellow })
 				set("Identifier", { fg = colors.fg })
 				set("Function", { fg = colors.blue, bold = true })
 				set("Function.builtin", { fg = colors.cyan, bold = true })
 				set("Statement", { fg = colors.magenta, bold = true })
-				set("Conditional", { fg = colors.magenta })
-				set("Repeat", { fg = colors.yellow })
+				set("Conditional", { fg = colors.orange })
+				set("Repeat", { fg = colors.orange })
 				set("Label", { fg = colors.cyan })
 				set("Operator", { fg = colors.cyan })
 				set("Keyword", { fg = colors.blue, bold = true })
 				set("Exception", { fg = colors.red })
 				set("PreProc", { fg = colors.yellow })
-				set("Include", { fg = colors.yellow })
-				set("Macro", { fg = colors.bright_red })
+				set("Include", { fg = colors.magenta })
+				set("Macro", { fg = colors.orange })
 				set("Type", { fg = colors.cyan, italic = true })
-				set("StorageClass", { fg = colors.red })
+				set("StorageClass", { fg = colors.orange })
 				set("Structure", { fg = colors.yellow })
 				set("Typedef", { fg = colors.yellow })
 				set("Special", { fg = colors.cyan })
@@ -111,16 +114,16 @@ local M = {
 				set("Tag", { fg = colors.magenta })
 				set("Delimiter", { fg = colors.fg })
 				set("Debug", { fg = colors.red })
-				set("Title", { fg = colors.blue, bold = true })
-				set("Directory", { fg = colors.cyan })
+				set("Title", { fg = colors.cyan, bold = true })
+				set("Directory", { fg = colors.cyan, bold = true })
 
 				-- Diagnostics
 				set("DiagnosticError", { fg = colors.red, bg = colors.panel })
-				set("DiagnosticWarn", { fg = colors.yellow, bg = colors.panel })
+				set("DiagnosticWarn", { fg = colors.orange, bg = colors.panel })
 				set("DiagnosticInfo", { fg = colors.cyan, bg = colors.panel })
 				set("DiagnosticHint", { fg = colors.green, bg = colors.panel })
 				set("DiagnosticUnderlineError", { undercurl = true, sp = colors.red })
-				set("DiagnosticUnderlineWarn", { undercurl = true, sp = colors.yellow })
+				set("DiagnosticUnderlineWarn", { undercurl = true, sp = colors.orange })
 				set("DiagnosticUnderlineInfo", { undercurl = true, sp = colors.cyan })
 				set("DiagnosticUnderlineHint", { undercurl = true, sp = colors.green })
 
@@ -128,7 +131,7 @@ local M = {
 				set("@text", { link = "Normal" })
 				set("@comment", { link = "Comment" })
 				set("@constant", { link = "Constant" })
-				set("@constant.builtin", { fg = colors.red, bold = true })
+				set("@constant.builtin", { fg = colors.orange, bold = true })
 				set("@string", { link = "String" })
 				set("@character", { link = "Character" })
 				set("@number", { link = "Number" })
@@ -138,11 +141,11 @@ local M = {
 				set("@function.builtin", { link = "Function.builtin" })
 				set("@method", { link = "Function" })
 				set("@keyword", { link = "Keyword" })
-				set("@keyword.function", { link = "Keyword" })
+				set("@keyword.function", { fg = colors.magenta, bold = true })
 				set("@keyword.operator", { link = "Operator" })
 				set("@type.builtin", { fg = colors.cyan, bold = true })
 				set("@variable", { fg = colors.fg })
-				set("@variable.builtin", { fg = colors.red, bold = true, italic = true })
+				set("@variable.builtin", { fg = colors.orange, bold = true, italic = true })
 				set("@parameter", { fg = colors.yellow, italic = true })
 				set("@tag.attribute", { fg = colors.yellow })
 				set("@constructor", { fg = colors.magenta })
@@ -150,23 +153,29 @@ local M = {
 				set("@text.uri", { fg = colors.green, underline = true })
 				set("@text.todo", { fg = colors.base, bg = colors.yellow, bold = true })
 
-				-- Search (Dark Inverted)
-				set("Search", { fg = colors.base, bg = "#737373" })
-				set("IncSearch", { fg = colors.base, bg = colors.white, bold = true })
-				pcall(set, "CurSearch", { fg = colors.base, bg = colors.white, bold = true })
-				set("Substitute", { fg = colors.base, bg = "#A6A6A6", bold = true })
-				set("MatchParen", { fg = colors.white, bg = "#494949", bold = true })
-				pcall(set, "HlSearchNear", { fg = colors.base, bg = "#858585" })
-				pcall(set, "HlSearchLens", { fg = colors.base, bg = "#595959" })
-				pcall(set, "HlSearchLensNear", { fg = colors.base, bg = "#737373" })
+				-- Search
+				set("Search", { fg = colors.base, bg = colors.yellow })
+				set("IncSearch", { fg = colors.base, bg = colors.orange, bold = true })
+				pcall(set, "CurSearch", { fg = colors.base, bg = colors.cyan, bold = true })
+				set("Substitute", { fg = colors.base, bg = colors.green, bold = true })
+				set("MatchParen", { fg = colors.cyan, bg = colors.subtle, bold = true })
+				pcall(set, "HlSearchNear", { fg = colors.base, bg = colors.blue })
+				pcall(set, "HlSearchLens", { fg = colors.base, bg = colors.subtle })
+				pcall(set, "HlSearchLensNear", { fg = colors.base, bg = colors.cyan })
+
+				-- Alpha (dashboard) colors
+				set("AlphaHeader", { fg = colors.cyan, bold = true })
+				set("AlphaButtons", { fg = colors.magenta })
+				set("AlphaShortcut", { fg = colors.green, bold = true })
+				set("AlphaFooter", { fg = colors.yellow, italic = true })
 
 				-- Enforce background consistency
 				local function enforce_panel()
 					set("Normal", { fg = colors.fg, bg = colors.panel })
 					set("NormalNC", { fg = colors.fg, bg = colors.panel })
 					set("NormalFloat", { fg = colors.fg, bg = colors.panel })
-					set("StatusLine", { fg = colors.fg, bg = colors.panel })
-					set("TabLine", { fg = colors.bright_white, bg = colors.panel })
+					set("StatusLine", { fg = colors.cyan, bg = colors.panel })
+					set("TabLine", { fg = colors.magenta, bg = colors.panel })
 					set("AlphaNormal", { fg = colors.fg, bg = colors.panel })
 				end
 

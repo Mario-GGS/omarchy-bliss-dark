@@ -1,11 +1,11 @@
-/* ── Dark Inverted OSD */
+/* ── Cyberpunk Edgerunners OSD */
 
-@define-color bg        #121212;      /* base invertido */
-@define-color fg        #E5E5E5;      /* text/icons invertido */
-@define-color border    rgba(229,229,229,0.55);   /* #E5E5E58C */
-@define-color track     rgba(229,229,229,0.15);   /* meter trough */
-@define-color progress1 rgba(229,229,229,0.90);   /* #E5E5E5E6 */
-@define-color progress2 rgba(229,229,229,0.90);   /* #E5E5E5E6 */
+@define-color bg        #121212;
+@define-color fg        #E5E5E5;
+@define-color border    #00BFD4;
+@define-color track     rgba(94,27,107,0.3);
+@define-color progress1 #00BFD4;
+@define-color progress2 #3FCC1A;
 
 window {
   background-color: transparent;
@@ -15,21 +15,20 @@ window {
   box-shadow: none;
 }
 
-/* Frosted panel with subtle border; keep it squarish like the rest */
 .osd,
 #osd,
 osd {
-  background-color: alpha(@bg, 0.45);     /* frosted glass */
-  border: 1px solid @border;
-  border-radius: 12px;                     /* match your rounded windows */
-  box-shadow: none;
+  background-color: alpha(@bg, 0.45);
+  border: 2px solid @border;
+  border-radius: 12px;
+  box-shadow: 0 0 10px alpha(@border, 0.3);
 }
 
 image {
-  color: @fg;
+  color: @border;
   -gtk-icon-size: 48px;
   margin: 0 16px 0 0;
-  filter: none;
+  filter: drop-shadow(0 0 3px alpha(@border, 0.5));
 }
 
 label {
@@ -37,7 +36,7 @@ label {
   font-size: 14px;
   font-weight: 500;
   margin: 0;
-  text-shadow: none;
+  text-shadow: 0 0 2px alpha(@border, 0.3);
 }
 
 /* Progress bar */
@@ -53,15 +52,15 @@ progressbar > trough,
 progressbar trough {
   background: @track;
   border-radius: 12px;
-  border: 1px solid rgba(229,229,229,0.25);
+  border: 1px solid alpha(@border, 0.4);
   min-height: 16px;
 }
 
 progressbar > trough > progress,
 progressbar progress {
-  background: linear-gradient(90deg, @progress1, @progress2); /* neutral grey, no blue */
+  background: linear-gradient(90deg, @progress1, @progress2);
   border-radius: 12px;
   border: none;
   min-height: 16px;
-  box-shadow: none;
+  box-shadow: 0 0 8px alpha(@progress1, 0.5);
 }
