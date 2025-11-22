@@ -9,37 +9,37 @@ size = 11.0
 [colors]
 
 [colors.primary]
-background = "#CCCCCC"
-foreground = "#474747"
+background = "#121212"
+foreground = "#E5E5E5"
 
 [colors.cursor]
-text = "#CCCCCC"
-cursor = "#333333"
+text = "#121212"
+cursor = "#E5E5E5"
 
 [colors.normal]
-black   = "#333333"
-red     = "#3d3d3d"
-green   = "#474747"
-yellow  = "#515151"
-blue    = "#5b5b5b"
-magenta = "#656565"
-cyan    = "#6f6f6f"
-white   = "#cccccc"
+black   = "#121212"
+red     = "#2a2a2a"
+green   = "#3d3d3d"
+yellow  = "#505050"
+blue    = "#636363"
+magenta = "#767676"
+cyan    = "#898989"
+white   = "#E5E5E5"
 
 [colors.bright]
-black   = "#4a4a4a"
-red     = "#545454"
-green   = "#5e5e5e"
-yellow  = "#686868"
-blue    = "#727272"
-magenta = "#7c7c7c"
-cyan    = "#868686"
+black   = "#1e1e1e"
+red     = "#3a3a3a"
+green   = "#4d4d4d"
+yellow  = "#606060"
+blue    = "#737373"
+magenta = "#868686"
+cyan    = "#999999"
 white   = "#ffffff"
 
 [colors.selection]
-text = "#CCCCCC"
-background = "#333333"
+text = "#121212"
+background = "#E5E5E5"
 
 [colors.vi_mode_cursor]
-text   = "#CCCCCC"
-cursor = "#333333"
+text   = "#121212"
+cursor = "#E5E5E5"

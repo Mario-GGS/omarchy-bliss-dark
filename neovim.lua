@@ -1,5 +1,5 @@
--- Serenity Neovim theme (LazyVim override)
--- Dark variant by Mario-GGS
+-- Dark Inverted Neovim theme (LazyVim override)
+-- Based on Serenity with inverted colors
 
 local M = {
 	{
@@ -11,40 +11,34 @@ local M = {
 				vim.o.pumblend = 0
 
 				local colors = {
-					-- Base / fondo
-					base = "#121212", -- terminal base
-					panel = "#121212", -- editor panel
-					fg = "#E5E5E5",
-					border = "#333333",
+					base = "#121212", -- terminal base (invertido de #CCCCCC)
+					panel = "NONE", -- editor panel
+					fg = "#E5E5E5", -- foreground principal (invertido de #474747)
+					border = "#E5E5E5", -- bordes (invertido de #333333)
 
-					-- Paleta principal
-					black = "#000000",
-					red = "#C94F4F",
-					green = "#8BC34A",
-					yellow = "#FFB74D",
-					blue = "#64B5F6",
-					magenta = "#BA68C8",
-					cyan = "#4DD0E1",
-					white = "#E5E5E5",
+					black = "#121212", -- invertido de #CCCCCC
+					red = "#2A2A2A", -- invertido de #3D3D3D
+					green = "#3D3D3D", -- invertido de #474747
+					yellow = "#505050", -- invertido de #515151
+					blue = "#636363", -- invertido de #5B5B5B
+					magenta = "#767676", -- invertido de #656565
+					cyan = "#898989", -- invertido de #6F6F6F
+					white = "#E5E5E5", -- invertido de #333333
 
-					bright_black = "#555555",
-					bright_red = "#EF5350",
-					bright_green = "#AED581",
-					bright_yellow = "#FFD54F",
-					bright_blue = "#90CAF9",
-					bright_magenta = "#CE93D8",
-					bright_cyan = "#80DEEA",
+					bright_black = "#1E1E1E", -- invertido de #4A4A4A
+					bright_red = "#3A3A3A", -- invertido de #545454
+					bright_green = "#4D4D4D", -- invertido de #5E5E5E
+					bright_yellow = "#606060", -- invertido de #686868
+					bright_blue = "#737373", -- invertido de #727272
+					bright_magenta = "#868686", -- invertido de #7C7C7C
+					bright_cyan = "#999999", -- invertido de #868686
 					bright_white = "#FFFFFF",
 
-					-- Extras
-					subtle = "#252525",
-					selection_bg = "#252525",
-					selection_fg = "#F0F0F0",
-					cursor = "#F0F0F0",
-					cursor_text = "#121212",
-
-					-- Logo / header LazyVim
-					logo = "#FAFAFA",
+					subtle = "#404040", -- invertido de #BFBFBF
+					selection_bg = "#E5E5E5", -- invertido de #333333
+					selection_fg = "#121212", -- invertido de #CCCCCC
+					cursor = "#E5E5E5", -- invertido de #333333
+					cursor_text = "#121212", -- invertido de #CCCCCC
 				}
 
 				local function set(g, o)
@@ -57,9 +51,9 @@ local M = {
 				-- Core/editor
 				set("Normal", vim.tbl_extend("force", { fg = colors.fg }, P))
 				set("NormalNC", vim.tbl_extend("force", { fg = colors.fg }, P))
-				set("SignColumn", vim.tbl_extend("force", { fg = colors.bright_black }, P))
-				set("FoldColumn", vim.tbl_extend("force", { fg = colors.bright_black }, P))
-				set("LineNr", vim.tbl_extend("force", { fg = colors.bright_black }, P))
+				set("SignColumn", vim.tbl_extend("force", { fg = colors.bright_white }, P))
+				set("FoldColumn", vim.tbl_extend("force", { fg = colors.bright_white }, P))
+				set("LineNr", vim.tbl_extend("force", { fg = colors.bright_white }, P))
 				set("CursorLine", P)
 				set("CursorColumn", P)
 
@@ -73,8 +67,8 @@ local M = {
 
 				-- Statusline / tabs
 				set("StatusLine", vim.tbl_extend("force", { fg = colors.fg }, P))
-				set("StatusLineNC", vim.tbl_extend("force", { fg = colors.bright_black }, P))
-				set("TabLine", vim.tbl_extend("force", { fg = colors.bright_black }, P))
+				set("StatusLineNC", vim.tbl_extend("force", { fg = colors.bright_white }, P))
+				set("TabLine", vim.tbl_extend("force", { fg = colors.bright_white }, P))
 				set("TabLineFill", P)
 				set("TabLineSel", { fg = colors.base, bg = colors.blue, bold = true })
 
@@ -85,10 +79,10 @@ local M = {
 				-- Selections / folds
 				set("Visual", { bg = colors.selection_bg, fg = colors.selection_fg })
 				set("VisualNOS", { bg = colors.subtle })
-				set("Folded", vim.tbl_extend("force", { fg = colors.bright_black, italic = true }, P))
+				set("Folded", vim.tbl_extend("force", { fg = colors.bright_white, italic = true }, P))
 
 				-- Syntax
-				set("Comment", { fg = colors.bright_black, italic = true })
+				set("Comment", { fg = colors.bright_white, italic = true })
 				set("Constant", { fg = colors.magenta })
 				set("String", { fg = colors.green })
 				set("Character", { fg = colors.cyan })
@@ -96,16 +90,14 @@ local M = {
 				set("Boolean", { fg = colors.red, bold = true })
 				set("Float", { fg = colors.yellow })
 				set("Identifier", { fg = colors.fg })
-
-				-- un poco más de punch para funciones y palabras clave
-				set("Function", { fg = colors.bright_blue, bold = true })
+				set("Function", { fg = colors.blue, bold = true })
 				set("Function.builtin", { fg = colors.cyan, bold = true })
 				set("Statement", { fg = colors.magenta, bold = true })
 				set("Conditional", { fg = colors.magenta })
 				set("Repeat", { fg = colors.yellow })
 				set("Label", { fg = colors.cyan })
 				set("Operator", { fg = colors.cyan })
-				set("Keyword", { fg = colors.bright_blue, bold = true })
+				set("Keyword", { fg = colors.blue, bold = true })
 				set("Exception", { fg = colors.red })
 				set("PreProc", { fg = colors.yellow })
 				set("Include", { fg = colors.yellow })
@@ -127,7 +119,6 @@ local M = {
 				set("DiagnosticWarn", { fg = colors.yellow, bg = colors.panel })
 				set("DiagnosticInfo", { fg = colors.cyan, bg = colors.panel })
 				set("DiagnosticHint", { fg = colors.green, bg = colors.panel })
-
 				set("DiagnosticUnderlineError", { undercurl = true, sp = colors.red })
 				set("DiagnosticUnderlineWarn", { undercurl = true, sp = colors.yellow })
 				set("DiagnosticUnderlineInfo", { undercurl = true, sp = colors.cyan })
@@ -158,42 +149,25 @@ local M = {
 				set("@namespace", { fg = colors.cyan })
 				set("@text.uri", { fg = colors.green, underline = true })
 				set("@text.todo", { fg = colors.base, bg = colors.yellow, bold = true })
-				-- Lazy.nvim UI (el gestor de plugins que ves abajo con el rayito)
-				pcall(set, "LazyNormal", { fg = colors.fg, bg = colors.panel })
-				pcall(set, "LazyH1", { fg = colors.logo, bg = colors.panel, bold = true })
-				pcall(set, "LazyButton", { fg = colors.bright_cyan, bg = colors.panel })
-				pcall(set, "LazyButtonActive", { fg = colors.base, bg = colors.bright_cyan, bold = true })
-				pcall(set, "LazyComment", { fg = colors.bright_black, bg = colors.panel, italic = true })
-				pcall(set, "LazyProgressDone", { fg = colors.bright_blue, bg = colors.panel })
-				pcall(set, "LazyProgressTodo", { fg = colors.bright_black, bg = colors.panel })
 
-				-- Search
-				set("Search", { fg = colors.base, bg = "#8C8C8C" })
-				set("IncSearch", { fg = colors.base, bg = colors.black, bold = true })
-				pcall(set, "CurSearch", { fg = colors.base, bg = colors.black, bold = true })
-				set("Substitute", { fg = colors.base, bg = "#595959", bold = true })
+				-- Search (Dark Inverted)
+				set("Search", { fg = colors.base, bg = "#737373" })
+				set("IncSearch", { fg = colors.base, bg = colors.white, bold = true })
+				pcall(set, "CurSearch", { fg = colors.base, bg = colors.white, bold = true })
+				set("Substitute", { fg = colors.base, bg = "#A6A6A6", bold = true })
+				set("MatchParen", { fg = colors.white, bg = "#494949", bold = true })
+				pcall(set, "HlSearchNear", { fg = colors.base, bg = "#858585" })
+				pcall(set, "HlSearchLens", { fg = colors.base, bg = "#595959" })
+				pcall(set, "HlSearchLensNear", { fg = colors.base, bg = "#737373" })
 
-				-- MatchParen y lens algo más discretos en dark
-				set("MatchParen", { fg = colors.black, bg = "#4A4A4A", bold = true })
-				pcall(set, "HlSearchNear", { fg = colors.base, bg = "#5E5E5E" })
-				pcall(set, "HlSearchLens", { fg = colors.base, bg = "#707070" })
-				pcall(set, "HlSearchLensNear", { fg = colors.base, bg = "#666666" })
-
-				-- Enforce background consistency + Alpha/LazyVim tweaks
+				-- Enforce background consistency
 				local function enforce_panel()
 					set("Normal", { fg = colors.fg, bg = colors.panel })
 					set("NormalNC", { fg = colors.fg, bg = colors.panel })
 					set("NormalFloat", { fg = colors.fg, bg = colors.panel })
 					set("StatusLine", { fg = colors.fg, bg = colors.panel })
-					set("TabLine", { fg = colors.bright_black, bg = colors.panel })
-
-					-- Dashboard / LazyVim
+					set("TabLine", { fg = colors.bright_white, bg = colors.panel })
 					set("AlphaNormal", { fg = colors.fg, bg = colors.panel })
-					pcall(set, "AlphaHeader", { fg = colors.logo, bg = colors.panel, bold = true })
-					pcall(set, "AlphaTitle", { fg = colors.logo, bg = colors.panel, bold = true })
-					pcall(set, "AlphaShortcut", { fg = colors.bright_yellow, bg = colors.panel, bold = true })
-					pcall(set, "AlphaButtons", { fg = colors.bright_cyan, bg = colors.panel })
-					pcall(set, "AlphaFooter", { fg = colors.bright_black, bg = colors.panel })
 				end
 
 				vim.api.nvim_create_autocmd({ "UIEnter", "VimEnter", "ColorScheme" }, {

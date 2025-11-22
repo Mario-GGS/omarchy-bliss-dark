@@ -1,13 +1,13 @@
 @define-color text #E5E5E5;
 @define-color base #121212;
-@define-color border #333333AA;
+@define-color border #E5E5E544;
 @define-color foreground #E5E5E5;
 @define-color background #121212;
-@define-color hover #222222;
-@define-color accent #CCCCCC;
+@define-color hover #272727;
+@define-color accent #E5E5E5;
 
 window .box-wrapper {
-  background: rgba(24, 24, 24, 0.85); /* same as Waybar and terminal */
+  background: rgba(18, 18, 18, 0.55); /* same as Waybar and terminal */
   padding: 8px 2px;
   color: @text;
   border: 1px solid @border;
@@ -41,7 +41,7 @@ child {
 
 child:hover .item-box,
 child:selected .item-box {
-  background: linear-gradient(90deg, rgba(50, 50, 50, 0.80), transparent 100%);
+  background: linear-gradient(90deg, alpha(@accent, 0.15), transparent 100%);
   border-left: 2px solid alpha(@accent, 1);
   transform: translateX(4px);
   transition:
