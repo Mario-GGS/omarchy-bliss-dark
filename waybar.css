@@ -1,5 +1,5 @@
 /* ────────────────────────────────────────────────────────────
- * Custom Dark Theme for Waybar - Truly Compact
+ * Custom Dark Theme for Waybar
  * Made with Omarchist - Dark Inverted
  * ────────────────────────────────────────────────────────────
  */
@@ -12,101 +12,125 @@
     font-size: 13px;
     min-height: 0;
     border: none;
-    border-radius: 0;
 }
 
-/* Fondo del window completamente transparente */
 window#waybar {
     background-color: transparent;
 }
 
-/* MÓDULOS IZQUIERDA - Agrupados juntos */
-#custom-omarchy,
+/* ISLOTE IZQUIERDO - Logo + Workspaces */
+#custom-omarchy {
+    background-color: alpha(@background, 0.55);
+    color: @foreground;
+    padding: 0 12px;
+    margin: 5px 0 5px 10px;
+    border-radius: 8px 0 0 8px;
+}
+
 #workspaces {
     background-color: alpha(@background, 0.55);
     color: @foreground;
-    padding: 4px 10px;
-    margin: 5px 0 5px 10px;
-}
-
-#workspaces {
-    padding: 4px 5px;
-    margin-left: 0;
+    padding: 0 8px;
+    margin: 5px 0;
+    border-radius: 0 8px 8px 0;
 }
 
 #workspaces button {
-    padding: 0 6px;
+    padding: 0 8px;
     color: @foreground;
     background-color: transparent;
-    min-width: 20px;
 }
 
-/* Quitar el cuadro del workspace activo - solo subrayado */
 #workspaces button.active {
     color: @foreground;
-    background-color: transparent;
-    border-bottom: 2px solid @foreground;
+    background-color: rgba(18, 18, 18, 0.8);
 }
 
 #workspaces button:hover {
     background-color: alpha(@foreground, 0.1);
 }
 
-/* MÓDULOS CENTRO - Cada uno separado */
+/* ISLOTES CENTRO - Cada uno separado */
 #clock {
     background-color: alpha(@background, 0.55);
     color: @foreground;
-    padding: 4px 12px;
-    margin: 5px 3px;
+    padding: 0 15px;
+    margin: 5px 5px;
+    border-radius: 8px;
 }
 
 #custom-update {
     background-color: alpha(@background, 0.55);
     color: @foreground;
-    padding: 4px 8px;
-    margin: 5px 3px;
+    padding: 0 8px;
+    margin: 5px 5px;
+    border-radius: 8px;
 }
 
 #custom-screenrecording-indicator {
     background-color: alpha(@background, 0.55);
     color: #F38BA8;
-    padding: 4px 8px;
-    margin: 5px 3px;
+    padding: 0 8px;
+    margin: 5px 5px;
+    border-radius: 8px;
 }
 
-/* MÓDULOS DERECHA - Todos juntos en un solo bloque */
-.modules-right {
-    margin-right: 10px;
-}
-
-/* Contenedor del tray expandible */
+/* ISLOTE DERECHA - Tray */
 #custom-expand-icon {
     background-color: alpha(@background, 0.55);
     color: @foreground;
-    padding: 4px 8px;
-    margin: 5px 0 5px 10px;
+    padding: 0 8px;
+    margin: 5px 0 5px 5px;
+    border-radius: 8px 0 0 8px;
 }
 
 #tray {
     background-color: alpha(@background, 0.55);
-    padding: 4px 8px;
+    padding: 0 8px;
     margin: 5px 0;
+    border-radius: 0 8px 8px 0;
 }
 
 .tray-group-item {
-    padding: 0 3px;
+    padding: 0 4px;
 }
 
-/* Iconos del sistema - todos en el mismo bloque */
-#bluetooth,
-#network,
-#pulseaudio,
-#cpu,
+/* ISLOTE DERECHA - Iconos del sistema */
+#bluetooth {
+    background-color: alpha(@background, 0.55);
+    color: @foreground;
+    padding: 0 8px;
+    margin: 5px 0 5px 5px;
+    border-radius: 8px 0 0 8px;
+}
+
+#network {
+    background-color: alpha(@background, 0.55);
+    color: @foreground;
+    padding: 0 8px;
+    margin: 5px 0;
+}
+
+#pulseaudio {
+    background-color: alpha(@background, 0.55);
+    color: @foreground;
+    padding: 0 8px;
+    margin: 5px 0;
+}
+
+#cpu {
+    background-color: alpha(@background, 0.55);
+    color: @foreground;
+    padding: 0 8px;
+    margin: 5px 0;
+}
+
 #battery {
     background-color: alpha(@background, 0.55);
     color: @foreground;
-    padding: 4px 8px;
+    padding: 0 10px;
     margin: 5px 0;
+    border-radius: 0 8px 8px 0;
 }
 
 #battery.warning {
@@ -117,19 +141,21 @@ window#waybar {
     color: #F38BA8;
 }
 
-/* Power menu */
+/* ISLOTE DERECHA - Power menu */
 #custom-power-icon {
     background-color: alpha(@background, 0.55);
     color: @foreground;
-    padding: 4px 10px;
-    margin: 5px 10px 5px 0;
+    padding: 0 10px;
+    margin: 5px 10px 5px 5px;
+    border-radius: 8px;
 }
 
 .power_item {
     background-color: alpha(@background, 0.55);
     color: @foreground;
-    padding: 4px 8px;
+    padding: 0 8px;
     margin: 5px 0;
+    border-radius: 8px;
 }
 
 #custom-poweroff { color: #F38BA8; }
@@ -142,8 +168,8 @@ tooltip {
     background-color: alpha(@background, 0.95);
     color: @foreground;
     border: 1px solid alpha(@foreground, 0.2);
-    border-radius: 0;
-    padding: 6px 10px;
+    border-radius: 8px;
+    padding: 8px 12px;
 }
 
 tooltip label {
