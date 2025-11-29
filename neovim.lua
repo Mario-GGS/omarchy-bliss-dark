@@ -226,6 +226,22 @@ local M = {
         set("AlphaShortcut", { fg = colors.fg })
         set("AlphaFooter", { fg = colors.fg })
 
+        -- Cursor de outline/borde (no relleno)
+        set("Cursor", { reverse = true })
+        set("lCursor", { reverse = true })
+        set("CursorIM", { reverse = true })
+        set("TermCursor", { reverse = true })
+        
+        -- LSP Reference highlighting con borde también
+        set("LspReferenceText", { fg = colors.fg, bg = "NONE", underline = true, sp = colors.surface1 })
+        set("LspReferenceRead", { fg = colors.fg, bg = "NONE", underline = true, sp = colors.surface1 })
+        set("LspReferenceWrite", { fg = colors.yellow, bg = "NONE", underline = true, sp = colors. yellow, bold = true })
+        
+        -- Illuminated word highlighting (si usas vim-illuminate)
+        set("IlluminatedWordText", { fg = colors.fg, bg = "NONE", underline = true, sp = colors.surface1 })
+        set("IlluminatedWordRead", { fg = colors.fg, bg = "NONE", underline = true, sp = colors.surface1 })
+        set("IlluminatedWordWrite", { fg = colors.yellow, bg = "NONE", underline = true, sp = colors.yellow, bold = true })
+
         -------------------------------------------------------------------------
         -- Enforce consistent background
         -------------------------------------------------------------------------
