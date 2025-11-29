@@ -66,26 +66,26 @@ local M = {
 
 				-- Core/editor (mantener monocromático)
 				set("Normal", vim.tbl_extend("force", { fg = colors.fg }, P))
-				set("NormalNC", vim.tbl_extend("force", { fg = colors.fg }, P))
-				set("SignColumn", vim.tbl_extend("force", { fg = colors.fg }, P))
-				set("FoldColumn", vim.tbl_extend("force", { fg = colors.fg }, P))
+				set("NormalNC", vim.tbl_extend("force", { fg = colors. fg }, P))
+				set("SignColumn", vim.tbl_extend("force", { fg = colors. fg }, P))
+				set("FoldColumn", vim.tbl_extend("force", { fg = colors. fg }, P))
 				set("LineNr", vim.tbl_extend("force", { fg = colors.subtle }, P))
-				set("CursorLineNr", vim.tbl_extend("force", { fg = colors.fg }, P))
+				set("CursorLineNr", vim. tbl_extend("force", { fg = colors.fg }, P))
 				set("CursorLine", P)
 				set("CursorColumn", P)
 
 				-- Floats / menus (mantener monocromático)
 				set("NormalFloat", vim.tbl_extend("force", { fg = colors.fg }, P))
-				set("FloatBorder", vim.tbl_extend("force", { fg = colors.border }, P))
+				set("FloatBorder", vim.tbl_extend("force", { fg = colors. border }, P))
 				set("Pmenu", vim.tbl_extend("force", { fg = colors.fg }, P))
 				set("PmenuSel", { fg = colors.selection_fg, bg = colors.selection_bg })
 				set("PmenuSbar", { bg = colors.subtle })
 				set("PmenuThumb", { bg = colors.fg })
 
 				-- Statusline / tabs (mantener monocromático)
-				set("StatusLine", vim.tbl_extend("force", { fg = colors.fg }, P))
+				set("StatusLine", vim.tbl_extend("force", { fg = colors. fg }, P))
 				set("StatusLineNC", vim.tbl_extend("force", { fg = colors.subtle }, P))
-				set("TabLine", vim.tbl_extend("force", { fg = colors.subtle }, P))
+				set("TabLine", vim.tbl_extend("force", { fg = colors. subtle }, P))
 				set("TabLineFill", P)
 				set("TabLineSel", { fg = colors.selection_fg, bg = colors.selection_bg })
 
@@ -107,7 +107,7 @@ local M = {
 
 				-- Strings y caracteres (Yellow)
 				set("String", { fg = colors.yellow })
-				set("Character", { fg = colors.yellow })
+				set("Character", { fg = colors. yellow })
 
 				-- Números y constantes (Peach)
 				set("Number", { fg = colors.peach })
@@ -123,9 +123,9 @@ local M = {
 				set("Keyword", { fg = colors.mauve, italic = true })
 				set("Statement", { fg = colors.mauve })
 				set("Conditional", { fg = colors.mauve, italic = true })
-				set("Repeat", { fg = colors.mauve, italic = true })
+				set("Repeat", { fg = colors. mauve, italic = true })
 				set("Label", { fg = colors.mauve })
-				set("Exception", { fg = colors.red, italic = true })
+				set("Exception", { fg = colors. red, italic = true })
 
 				-- Operators (Sky)
 				set("Operator", { fg = colors.sky })
@@ -177,7 +177,7 @@ local M = {
 				set("@constant.builtin", { fg = colors.peach })
 				set("@string", { fg = colors.yellow })
 				set("@string.escape", { fg = colors.pink })
-				set("@string.special", { fg = colors.green })
+				set("@string.special", { fg = colors. green })
 				set("@character", { link = "Character" })
 				set("@number", { link = "Number" })
 				set("@boolean", { link = "Boolean" })
@@ -185,8 +185,8 @@ local M = {
 
 				-- Funciones y métodos
 				set("@function", { fg = colors.blue, bold = true })
-				set("@function. builtin", { fg = colors.blue })
-				set("@function.call", { fg = colors.blue })
+				set("@function. builtin", { fg = colors. blue })
+				set("@function.call", { fg = colors. blue })
 				set("@method", { fg = colors.blue })
 				set("@method.call", { fg = colors.blue })
 				set("@constructor", { fg = colors.sapphire })
@@ -206,9 +206,9 @@ local M = {
 
 				-- Variables
 				set("@variable", { fg = colors.text })
-				set("@variable.builtin", { fg = colors.red, italic = true })
+				set("@variable. builtin", { fg = colors. red, italic = true })
 				set("@variable.parameter", { fg = colors.maroon, italic = true })
-				set("@variable.member", { fg = colors.text })
+				set("@variable. member", { fg = colors.text })
 				set("@parameter", { fg = colors.maroon, italic = true })
 				set("@property", { fg = colors.text })
 				set("@field", { fg = colors.text })
@@ -222,39 +222,39 @@ local M = {
 				set("@type.builtin.python", { fg = colors.yellow }) -- int, str, etc
 				set("@keyword.import.python", { fg = colors.mauve, italic = true })
 				set("@keyword.exception.python", { fg = colors.red, italic = true })
-				set("@string.documentation.python", { fg = colors.comment, italic = true })
+				set("@string.documentation.python", { fg = colors. comment, italic = true })
 
 				-- JavaScript/TypeScript
 				set("@constructor.javascript", { fg = colors.sapphire })
-				set("@constructor.typescript", { fg = colors.sapphire })
-				set("@tag.javascript", { fg = colors.red })
+				set("@constructor.typescript", { fg = colors. sapphire })
+				set("@tag. javascript", { fg = colors.red })
 				set("@tag. typescript", { fg = colors.red })
 				set("@tag.tsx", { fg = colors.red })
-				set("@tag.attribute. tsx", { fg = colors.peach })
+				set("@tag.attribute.tsx", { fg = colors.peach })
 				set("@tag.delimiter.tsx", { fg = colors.fg })
 
 				-- Go
 				set("@namespace. go", { fg = colors.yellow })
-				set("@type.go", { fg = colors.yellow })
-				set("@function.call.go", { fg = colors.blue })
+				set("@type. go", { fg = colors.yellow })
+				set("@function. call.go", { fg = colors. blue })
 
 				-- Rust
-				set("@namespace.rust", { fg = colors.yellow })
-				set("@type.rust", { fg = colors.yellow })
-				set("@attribute.rust", { fg = colors.pink })
+				set("@namespace.rust", { fg = colors. yellow })
+				set("@type.rust", { fg = colors. yellow })
+				set("@attribute.rust", { fg = colors. pink })
 
 				-- HTML/XML
 				set("@tag", { fg = colors.red })
 				set("@tag. attribute", { fg = colors.peach })
-				set("@tag.delimiter", { fg = colors.fg })
+				set("@tag.delimiter", { fg = colors. fg })
 
 				-- CSS
 				set("@property.css", { fg = colors.blue })
-				set("@type.css", { fg = colors.peach })
+				set("@type.css", { fg = colors. peach })
 
 				-- Markdown
 				set("@text.title.markdown", { fg = colors.red, bold = true })
-				set("@text.literal.markdown", { fg = colors.green })
+				set("@text.literal.markdown", { fg = colors. green })
 				set("@text. uri", { fg = colors.sky, underline = true })
 				set("@text.emphasis", { italic = true })
 				set("@text.strong", { bold = true })
@@ -265,7 +265,7 @@ local M = {
 				set("@operator", { fg = colors.sky })
 				set("@punctuation. delimiter", { fg = colors.fg })
 				set("@punctuation. bracket", { fg = colors.fg })
-				set("@punctuation.special", { fg = colors.pink })
+				set("@punctuation.special", { fg = colors. pink })
 				set("@text.todo", { fg = colors.base, bg = colors.yellow, bold = true })
 				set("@text.warning", { fg = colors.base, bg = colors.peach, bold = true })
 				set("@text.danger", { fg = colors.base, bg = colors.red, bold = true })
@@ -283,14 +283,14 @@ local M = {
 				-- Alpha dashboard (mantener monocromático)
 				set("AlphaHeader", { fg = colors.fg })
 				set("AlphaButtons", { fg = colors.fg })
-				set("AlphaShortcut", { fg = colors.fg })
+				set("AlphaShortcut", { fg = colors. fg })
 				set("AlphaFooter", { fg = colors.fg })
 
 				-- Enforce background consistency
 				local function enforce_panel()
 					set("Normal", { fg = colors.fg, bg = colors.panel })
-					set("NormalNC", { fg = colors.fg, bg = colors.panel })
-					set("NormalFloat", { fg = colors.fg, bg = colors.panel })
+					set("NormalNC", { fg = colors. fg, bg = colors.panel })
+					set("NormalFloat", { fg = colors. fg, bg = colors.panel })
 					set("StatusLine", { fg = colors.fg, bg = colors.panel })
 					set("TabLine", { fg = colors.subtle, bg = colors.panel })
 					set("AlphaNormal", { fg = colors.fg, bg = colors.panel })
