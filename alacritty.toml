@@ -1,7 +1,7 @@
 [window]
 decorations = "none"
 padding = { x = 18, y = 14 }
-opacity = 0.55
+opacity = 1.0
 
 [font]
 size = 20.0
